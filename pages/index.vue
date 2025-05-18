@@ -3,8 +3,8 @@
 
     
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-start justify-center relative pt-12">
-      <div class="container h-[80vh] relative mx-auto pt-12 px-4 bg-gradient-to-r from-blue-800 to-blue-900 text-white rounded-lg shadow-md">
+    <section class="min-h-screen flex items-start justify-center relative lg:pt-12 p-2">
+      <div class="container h-[90vh] md:h-[80vh] relative mx-auto p-4 md:pt-12 md:px-4 bg-gradient-to-r from-blue-800 to-blue-900 text-white rounded-lg shadow-md">
         
 
             <!-- Elementos decorativos de fondo -->
@@ -19,28 +19,29 @@
 
 
       <div class="container mx-auto px-4 z-10 relative">
-        <div class="bg-white rounded-lg shadow-sm p-2 inline-flex mb-6">
-          <button 
-            @click="() => setUserType('candidate')" 
-            :class="[
-              'px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer', 
-              userType === 'candidate' ? 'bg-blue-800 text-white' : 'text-gray-600 hover:text-blue-700 hover:bg-blue-50'
-            ]"
-            type="button"
-          >
-            Soy Candidato
-          </button>
-          <button 
-            @click="() => setUserType('company')" 
-            :class="[
-              'px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer', 
-              userType === 'company' ? 'bg-blue-800 text-white' : 'text-gray-600 hover:text-blue-700 hover:bg-blue-50'
-            ]"
-            type="button"
-          >
-            Soy Empresa
-          </button>
-        </div>
+          <div class="bg-white rounded-lg shadow-sm p-2 inline-flex mb-6 w-full justify-evenly md:w-auto md:justify-start">
+            <button 
+              @click="() => setUserType('candidate')" 
+              :class="[
+                'px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer', 
+                userType === 'candidate' ? 'bg-blue-800 text-white' : 'text-gray-600 hover:text-blue-700 hover:bg-blue-50'
+              ]"
+              type="button"
+            >
+              Soy Candidato
+            </button>
+            <button 
+              @click="() => setUserType('company')" 
+              :class="[
+                'px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer', 
+                userType === 'company' ? 'bg-blue-800 text-white' : 'text-gray-600 hover:text-blue-700 hover:bg-blue-50'
+              ]"
+              type="button"
+            >
+              Soy Empresa
+            </button>
+          </div>
+
 
         
 
@@ -94,31 +95,32 @@
 
 
     <!-- Estadísticas mejoradas -->
-    <div class="mt-10 grid grid-cols-3 gap-8 animate-fade-in-delay-4">
-      <div class="relative">
-        <div class="absolute -top-3 -left-3 w-12 h-12 bg-orange-400/20 rounded-full"></div>
-        <p class="text-orange-400 text-3xl font-bold relative z-10">+1,500</p>
-        <p class="text-white/80 text-sm">Empleos activos</p>
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div class="relative animate-fade-in-delay">
+
+          <p class="text-orange-400 text-3xl font-bold relative z-10">+1,500</p>
+          <p class="text-white/80 text-sm">Empleos activos</p>
+        </div>
+        <div class="relative animate-fade-in-delay">
+
+          <p class="text-orange-400 text-3xl font-bold relative z-10">+500</p>
+          <p class="text-white/80 text-sm">Empresas</p>
+        </div>
+        <div class="relative animate-fade-in-delay">
+
+          <p class="text-orange-400 text-3xl font-bold relative z-10">+10,000</p>
+          <p class="text-white/80 text-sm">Profesionales</p>
+        </div>
       </div>
-      <div class="relative">
-        <div class="absolute -top-3 -left-3 w-12 h-12 bg-orange-400/20 rounded-full"></div>
-        <p class="text-orange-400 text-3xl font-bold relative z-10">+500</p>
-        <p class="text-white/80 text-sm">Empresas</p>
-      </div>
-      <div class="relative">
-        <div class="absolute -top-3 -left-3 w-12 h-12 bg-orange-400/20 rounded-full"></div>
-        <p class="text-orange-400 text-3xl font-bold relative z-10">+10,000</p>
-        <p class="text-white/80 text-sm">Profesionales</p>
-      </div>
-    </div>
+
         
 
 
           </div>
           <!-- Imagen derecha mejorada -->
-          <div class="md:w-1/2 mb-8 md:mb-0 min-h-100vh">
+          <div class="hidden lg:block w-1/2 mb-0 min-h-screen">
             <div class="relative">
-                <NetworkAnimation />
+              <NetworkAnimation />
             </div>
           </div>
         </div>
@@ -200,8 +202,8 @@
     <!-- Results Section -->
     <section class="container mx-auto px-4 py-8 mb-12">
       <div class="flex justify-between items-center mb-8">
-        <h2 class="text-3xl font-bold"> {{ userType === 'candidate' ? 'Vacantes Destacadas' : 'Candidatos Destacados' }}</h2>
-        <NuxtLink to="/vacantes" class="btn btn-ghost text-orange-500 font-bold flex items-center gap-1 text-lg ">
+        <h2 class="text-3xl font-bold w-8/12"> {{ userType === 'candidate' ? 'Vacantes Destacadas' : 'Candidatos Destacados' }}</h2>
+        <NuxtLink to="/vacantes" class="btn btn-ghost text-orange-500 font-bold flex items-center gap-1 text-lg w-4/12">
           {{ userType === 'candidate' ? 'Ver todas' : 'Ver todos' }}  <ArrowRightIcon class="w-5 h-5" />
         </NuxtLink>
       </div>
@@ -224,11 +226,11 @@
                 </div>
               </div>
               <span :class="[
-                'text-xs font-medium px-2 py-1 rounded-full', 
-                job.type === 'Tiempo completo' ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'
-              ]">
-                {{ job.type }}
-              </span>
+              'text-[12px] sm:text-sm font-medium px-2 py-0.5 rounded-full whitespace-nowrap', 
+              job.type === 'Tiempo completo' ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'
+            ]">
+              {{ job.type }}
+            </span>
             </div>
             
             <div class="space-y-3 mb-4">

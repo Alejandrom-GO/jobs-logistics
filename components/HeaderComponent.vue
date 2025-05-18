@@ -6,7 +6,7 @@
               <div class="flex items-center">
                 <NuxtLink to="/" class="flex items-center">
                   <TruckIcon class="h-8 w-8 text-blue-600" />
-                  <span class="ml-2 text-xl font-bold text-blue-800">LogiJobs</span>
+                  <span class="ml-2 text-xl font-bold text-blue-800 hidden md:block">LogiJobs</span>
                 </NuxtLink>
               </div>
               
@@ -50,9 +50,9 @@
             <div v-if="showMobileMenu" class="md:hidden bg-white border-t border-gray-200 py-2">
               <div class="container mx-auto px-4">
                 <NuxtLink to="/" class="block py-2 text-gray-600 hover:text-blue-700">Inicio</NuxtLink>
-                <NuxtLink to="/jobs" class="block py-2 text-gray-600 hover:text-blue-700">Vacantes</NuxtLink>
-                <NuxtLink to="/candidates" class="block py-2 text-gray-600 hover:text-blue-700">Candidatos</NuxtLink>
-                <NuxtLink to="/companies" class="block py-2 text-gray-600 hover:text-blue-700">Empresas</NuxtLink>
+                <NuxtLink to="/vacantes" class="block py-2 text-gray-600 hover:text-blue-700">Vacantes</NuxtLink>
+                <NuxtLink to="/candidatos" class="block py-2 text-gray-600 hover:text-blue-700">Candidatos</NuxtLink>
+                <NuxtLink to="/empresas" class="block py-2 text-gray-600 hover:text-blue-700">Empresas</NuxtLink>
               </div>
             </div>
           </header>
