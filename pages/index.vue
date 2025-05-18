@@ -118,7 +118,7 @@
 
           </div>
           <!-- Imagen derecha mejorada -->
-          <div class="hidden lg:block w-1/2 mb-0 min-h-screen">
+          <div class="hidden lg:block w-1/2 mb-0 ">
             <div class="relative">
               <NetworkAnimation />
             </div>
